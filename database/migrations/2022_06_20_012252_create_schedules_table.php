@@ -18,14 +18,12 @@ return new class extends Migration
             $table->integer('vehicle_id')->unsigned();
             $table->integer('stops_id')->unsigned();
             $table->integer('route_id')->unsigned();
-            $table->tinyInteger('day')->unsigned();
             $table->time('time');
 
             $table->unique([
                 'vehicle_id',
                 'stops_id',
                 'route_id',
-                'day',
                 'time'
             ]);
 

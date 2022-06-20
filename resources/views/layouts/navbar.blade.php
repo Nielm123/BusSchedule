@@ -16,8 +16,10 @@
                     Rozklady
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Rzeszów-Lancut-Przeworsk</a>
-                    <a class="dropdown-item" href="#">Przeworsk-Lancut-Rzeszów</a>
+                    @foreach($routes as $route)
+                        <a class="dropdown-item"
+                           href="{{route('schedule',['name'=>$route->name])}}">{{$route->name}}</a>
+                    @endforeach
                     <div class="dropdown-divider"></div>
                     @if(\Illuminate\Support\Facades\Auth::check())
                         <a class="dropdown-item" href="{{route('logout')}}">Logout</a>

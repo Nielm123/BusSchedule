@@ -9,10 +9,9 @@ class Stop extends Model
 {
     use HasFactory;
 
-    public function stops()
-    {
-        return $this->belongsTo(Stop::class);
-    }
+    protected $fillable = [
+      'name'
+    ];
 
     public function vehicle()
     {

@@ -9,8 +9,17 @@ class Schedule extends Model
 {
     use HasFactory;
 
+   protected $fillable = [
+       'vechicle_id',
+       'stops_id',
+       'route_id',
+       'day',
+       'time',
+   ] ;
+
     public function stops()
     {
         return $this->hasMany(Stop::class);
     }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Route;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,14 @@ class ScheduleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $routes = Route::all();
+        return view('home', ['routes' => $routes]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +49,7 @@ class ScheduleController extends Controller
      */
     public function show(Schedule $schedule)
     {
-        //
+
     }
 
     /**
