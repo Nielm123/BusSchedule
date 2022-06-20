@@ -17,9 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->text('name');
             $table->integer('vehicle_id')->unsigned();
-
-            $table
-                ->foreign('vehicle_id')
+            $table->timestamps();
+            $table->foreign('vehicle_id')
                 ->references('id')
                 ->on('vehicles')
                 ->onDelete('cascade');

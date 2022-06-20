@@ -10,7 +10,11 @@ class Stop extends Model
     use HasFactory;
 
     protected $fillable = [
-      'name'
+        'id',
+        'schedule_id',
+        'name',
+        'hour',
+        'minute'
     ];
 
     public function vehicle()
@@ -18,8 +22,8 @@ class Stop extends Model
         return $this->belongsTo(Vehicle::class);
     }
 
-    public function route()
+    public function schedule()
     {
-        return $this->belongsTo(Route::class);
+        return $this->belongsTo(Schedule::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Schedule;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -18,11 +19,22 @@ class SchedulesSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0; $i<30; $i++) {
-        DB::table('schedules')->insert([
-            'id'=>random_int(1,30),
-            'time'=>Carbon::random()->format('H:i')
+        Schedule::create([
+            'id'=>'1',
+            'route_id'=>'2'
         ]);
-        }
+        Schedule::create([
+            'id'=>'2',
+            'route_id'=>'1'
+        ]);
+        Schedule::create([
+            'id'=>'3',
+            'route_id'=>'2'
+        ]);
+        Schedule::create([
+            'id'=>'4',
+            'route_id'=>'1'
+        ]);
+
     }
 }

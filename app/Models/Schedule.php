@@ -10,16 +10,21 @@ class Schedule extends Model
     use HasFactory;
 
    protected $fillable = [
-       'vechicle_id',
-       'stops_id',
+       'id',
        'route_id',
-       'day',
-       'time',
    ] ;
 
     public function stops()
     {
         return $this->hasMany(Stop::class);
     }
+
+    public function busRoute()
+    {
+        return $this->belongsTo(BusRoute::class, 'route_id', 'id', 'routes');
+    }
+
+
+
 
 }

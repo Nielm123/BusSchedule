@@ -19,11 +19,13 @@ class RoutesSeeder extends Seeder
         //
         DB::table('routes')->insert([
             'id'=>'1',
-            'name'=>'Rzeszow-Lancut-Przeworsk'
+            'name'=>'Rzeszow-Lancut-Przeworsk',
+            'vehicle_id'=>'2',
         ]);
         DB::table('routes')->insert([
             'id'=>'2',
-            'name'=>'Przeworsk-Lancut-Rzeszow'
+            'name'=>'Przeworsk-Lancut-Rzeszow',
+            'vehicle_id'=>'1',
         ]);
     }
 }
